@@ -1,0 +1,10 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../flutter_addition_module/.android/include_flutter.groovy'
+))
+rootProject.name = "TestHybridAppAndroidFlutter"
+
+include ':flutter_addition_module'
+project(':flutter_addition_module').projectDir = new File('../flutter_addition_module')
